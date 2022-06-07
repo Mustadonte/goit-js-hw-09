@@ -14,7 +14,7 @@ refs = {
 const DELAY = 1000;
 let delta = 0;
 let finishDate = new Date();
-
+refs.startBtn.disabled = true;
 refs.startBtn.addEventListener('click', onStart);
 
 const options = {
@@ -36,6 +36,7 @@ const options = {
 flatpickr(refs.datePicker, options);
 
 function onStart() {
+  refs.startBtn.disabled = true;
   timerId = setInterval(() => {
     const startTime = Date.now();
 
