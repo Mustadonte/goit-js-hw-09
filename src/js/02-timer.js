@@ -37,7 +37,7 @@ flatpickr(refs.datePicker, options);
 
 function onStart() {
   refs.startBtn.disabled = true;
-  timerId = setInterval(() => {
+  const timerId = setInterval(() => {
     const startTime = Date.now();
 
     delta = finishDate.getTime() - startTime;
