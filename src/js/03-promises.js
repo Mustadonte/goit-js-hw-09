@@ -1,7 +1,7 @@
 import Notiflix from 'notiflix';
 import '../css/common.css';
 
-refs = {
+const refs = {
   form: document.querySelector('.form'),
   submitBtn: document.querySelector('button'),
 };
