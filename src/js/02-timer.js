@@ -2,7 +2,7 @@ import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import 'flatpickr/dist/themes/dark.css';
 
-refs = {
+const refs = {
   startBtn: document.querySelector('button[data-start]'),
   datePicker: document.querySelector('#datetime-picker'),
   daysEl: document.querySelector('[data-days]'),
