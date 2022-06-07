@@ -18,13 +18,20 @@ function onSubmit(e) {
   let delayValue = Number(delay.value);
   let stepValue = Number(step.value);
   let amountValue = Number(amount.value);
-  let position = 0;
+  let position = 1;
 
   setTimeout(() => {
-    intervalId = setInterval(() => {
-      position += 1;
-      delayValue += stepValue;
+    createPromise(position, delayValue)
+      .then(({ position, delay }) => {
+        Notiflix.Notify.success(`Fulfilled promise ${position} in ${delay}ms`);
+      })
+      .catch(({ position, delay }) => {
+        Notiflix.Notify.failure(`Rejected promise ${position} in ${delay}ms`);
+      });
 
+    intervalId = setInterval(() => {
+      delayValue += stepValue;
+      position += 1;
       if (position > amountValue) {
         clearInterval(intervalId);
         refs.submitBtn.disabled = false;
